@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#编译+部署order站点
+#编译+部署blog站点
 
 #需要配置如下参数
 # 项目路径, 在Execute Shell中配置项目路径, pwd 就可以获得该项目路径
@@ -20,7 +20,7 @@ killTomcat()
       kill -9 $pid
     fi
 }
-cd $PROJ_PATH/order
+cd $PROJ_PATH/blog
 mvn clean install
 
 # 停tomcat
@@ -32,10 +32,10 @@ rm -f $TOMCAT_APP_PATH/webapps/ROOT.war
 rm -f $TOMCAT_APP_PATH/webapps/order.war
 
 # 复制新的工程
-cp $PROJ_PATH/order/target/order.war $TOMCAT_APP_PATH/webapps/
+cp $PROJ_PATH/blog/target/blog.war $TOMCAT_APP_PATH/webapps/
 
 cd $TOMCAT_APP_PATH/webapps/
-mv order.war ROOT.war
+mv blog.war ROOT.war
 
 # 启动Tomcat
 cd $TOMCAT_APP_PATH/
