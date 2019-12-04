@@ -16,4 +16,5 @@ public class IndexController {
         ResultUtils res = new ResultUtils();
         return res.isOk();
     }
+
 }
