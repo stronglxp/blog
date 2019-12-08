@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @RestController
@@ -24,7 +25,8 @@ public class LoginController {
      * @return
      */
     @PostMapping("/login")
-    public ResultUtils<Map<String, String>> login(String userName, String userPassword) {
+    public ResultUtils<Map<String, String>> login(String userName, String userPassword,
+                                                  HttpSession session) {
         ResultUtils<Map<String, String>> res = new ResultUtils<>();
 
         // Shiro implements login
@@ -36,6 +38,7 @@ public class LoginController {
             subject.login(token);
             // admin
             if(subject.hasRole("admin")) {
+                session.setAttribute(userName, userName);
                 return res.isOk(null);
             } else {
                 res.setCode(MsgEnum.USER_INVALID.getCode());
