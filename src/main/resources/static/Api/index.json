@@ -1,4 +1,11 @@
 {
     "url": "/",
-    "description": ""
+    "param": {},
+    "description": "首页",
+    "type": "Get",
+    "return": {
+        "status": 0,
+        "msg": "",
+        "data": []
+    }
 }
