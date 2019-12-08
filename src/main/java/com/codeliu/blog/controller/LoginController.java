@@ -36,7 +36,11 @@ public class LoginController {
             subject.login(token);
             // admin
             if(subject.hasRole("admin")) {
-                res.isOk(null);
+                return res.isOk(null);
+            } else {
+                res.setCode(MsgEnum.USER_INVALID.getCode());
+                res.setMsg(MsgEnum.USER_INVALID.getMsg());
+                res.setData(null);
             }
         } catch (UnknownAccountException e) {
             res.setCode(MsgEnum.USER_ERROR.getCode());
