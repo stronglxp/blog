@@ -6,7 +6,7 @@
         role_name, permissions
     </sql>
 
-    <!--通过id查找对应的role-->
+    <!--Find the role by ID-->
     <select id="findById" resultType="com.codeliu.blog.entity.Role">
         select <include refid="field" />
         from role where role_id = #{roleId}

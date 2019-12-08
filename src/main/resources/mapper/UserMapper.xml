@@ -6,19 +6,19 @@
         user_id, user_name, user_salt, user_password, role_id
     </sql>
 
-    <!--根据用户名查找用户-->
+    <!--Find user by username-->
     <select id="findByName" resultType="user">
         select <include refid="field" />
         from user where user_name = #{username}
     </select>
 
-    <!--增加一个用户-->
+    <!--Add a user-->
     <insert id="addUser" parameterType="user">
         insert into user(user_name, user_salt, user_password, role_id)
               values(#{userName}, #{userSalt}, #{userPassword}, #{roleId})
     </insert>
 
-    <!--删除一个用户,user_name是唯一的-->
+    <!--Delete a user. User name is unique-->
     <delete id="delUser">
         delete from user
         <where>
@@ -26,7 +26,7 @@
         </where>
     </delete>
 
-    <!--修改用户密码-->
+    <!--Update user password-->
     <update id="updateUser" parameterType="user">
         update user set user_salt = #{userSalt}, user_password = #{userPassword}
         <where>
