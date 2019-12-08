@@ -1,0 +1,14 @@
+{
+    "url": "/login",
+    "param": {
+        "userName": "CodeTiger",
+        "userPassword": "123456"
+    },
+    "description": "login api, verify that the login information is correct",
+    "type": "Post",
+    "return": {
+        "code": 0,
+        "msg": "success",
+        "data": []
+    }
+}
