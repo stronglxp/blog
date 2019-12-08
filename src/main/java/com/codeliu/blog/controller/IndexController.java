@@ -14,7 +14,7 @@ public class IndexController {
     @GetMapping("/")
     public ResultUtils getIndex() {
         ResultUtils res = new ResultUtils();
-        return res.isOk();
+        return res.isOk("");
     }
 
 }

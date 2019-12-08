@@ -1,34 +1,50 @@
 package com.codeliu.blog.util;
 
-import java.util.HashMap;
+import org.springframework.stereotype.Component;
 
-public class ResultUtils {
-    private Integer status;
+/**
+ * The structure of return data.
+ * @param <T>
+ */
+@Component
+public class ResultUtils<T> {
+
+    private Integer code;
     private String msg;
-    private HashMap<String, Object> data;
+    private T data;
 
     public ResultUtils() {}
 
-    public ResultUtils isOk() {
-        ResultUtils res = new ResultUtils();
-        res.setStatus(0);
-        res.setMsg("success");
-        return res;
+    /**
+     * This structure will be return when successful.
+     * @param data
+     * @return
+     */
+    public ResultUtils<T> isOk(T data) {
+        ResultUtils<T> result = new ResultUtils<>();
+        result.code = MsgEnum.SUCCESS.getCode();
+        result.msg = MsgEnum.SUCCESS.getMsg();
+        result.data = data;
+        return result;
     }
 
-    public ResultUtils isFail() {
-        ResultUtils res = new ResultUtils();
-        res.setStatus(-1);
-        res.setMsg("fail");
-        return res;
+    /**
+     * This structure will be return when failed.
+     * @return
+     */
+    public ResultUtils<T> isFaild() {
+        ResultUtils<T> result = new ResultUtils<>();
+        result.code = MsgEnum.FAILD.getCode();
+        result.msg = MsgEnum.FAILD.getMsg();
+        return result;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 
     public String getMsg() {
@@ -39,11 +55,11 @@ public class ResultUtils {
         this.msg = msg;
     }
 
-    public HashMap<String, Object> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(HashMap<String, Object> data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
