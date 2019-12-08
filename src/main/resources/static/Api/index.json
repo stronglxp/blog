@@ -1,11 +1,11 @@
 {
     "url": "/",
     "param": {},
-    "description": "index page",
+    "description": "index api, information needed to return to the home page",
     "type": "Get",
     "return": {
-        "status": 0,
-        "msg": "",
-        "data": []
+        "code": 0,
+        "msg": "success",
+        "data": ""
     }
 }

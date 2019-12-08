@@ -5,9 +5,11 @@ package com.codeliu.blog.util;
  */
 public enum MsgEnum {
 
-    SUCCESS(200, "success"),
+    SUCCESS(0, "success"),
     FAILD(-1, "fail"),
     PARAM_ERROR(-2, "param error"),
+    PASS_ERROR(-3, "error password"),
+    USER_ERROR(-4, "user does not exist")
     ;
 
     private Integer code;
