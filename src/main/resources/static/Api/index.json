@@ -1,7 +1,7 @@
 {
     "url": "/",
     "param": {},
-    "description": "首页",
+    "description": "index page",
     "type": "Get",
     "return": {
         "status": 0,
