@@ -1,0 +1,29 @@
+{
+    "url": "/back/article/list",
+    "param": {
+        "userName": "CodeTiger"
+    },
+    "description": "The API accessed by default after entering the background",
+    "type": "Get",
+    "return": {
+        "code": 0,
+        "msg": "success",
+        "data": [
+            {
+                "article_id": 1,
+                "article_name": "我和我的祖国",
+                "article_time": "2019-10-11",
+                "article_status": 1
+            },
+            {
+                "article_id": 1,
+                "article_name": "我和我的祖国",
+                "article_time": "2019-10-11",
+                "article_status": 1
+            }
+        ]
+    },
+    "comment": {
+        "article_status": "代表文章的状态，1表示文章显示，0表示文章不显示"
+    }
+}

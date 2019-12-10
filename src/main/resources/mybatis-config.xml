@@ -5,13 +5,13 @@
 
 <configuration>
     <settings>
-        <!--开启缓存-->
+        <!--Enable cache-->
         <setting name="cacheEnabled" value="true"/>
-        <!--设置超时时间，它决定驱动等待数据库响应的秒数。-->
+        <!--Sets the timeout, which determines the number of seconds the driver waits for a response from the database-->
         <setting name="defaultStatementTimeout" value="3000"/>
-        <!--开启驼峰命名规则映射-->
+        <!--Turn on hump naming rule mapping-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <!--自动生成主键-->
+        <!--Generate primary key automatically-->
         <setting name="useGeneratedKeys" value="true"/>
     </settings>
 </configuration>
