@@ -4,7 +4,7 @@
     "description": "index api, information needed to return to the home page",
     "type": "Get",
     "return": {
-        "code": 0,
+        "code": 200,
         "msg": "success",
         "data": ""
     }
