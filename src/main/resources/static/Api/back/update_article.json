@@ -1,0 +1,19 @@
+{
+    "url": "/back/article/update",
+    "param": {
+        "userName": "CodeTiger",
+        "articleName": "我的祖国",
+        "articleBody": "......",
+        "articleStatus": 0
+    },
+    "description": "The API for update article",
+    "type": "Post",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": ""
+    },
+    "comment": {
+        "description": "可以更新articleName、articleBody、articleStatus任意组合"
+    }
+}
