@@ -5,7 +5,7 @@ package com.codeliu.blog.util;
  */
 public enum MsgEnum {
 
-    SUCCESS(0, "success"),
+    SUCCESS(200, "success"),
     FAILD(-1, "fail"),
     PARAM_ERROR(-2, "param error"),
     PASS_ERROR(-3, "error password"),
