@@ -1,7 +1,7 @@
 {
     "url": "/back/image/upload",
     "param": {
-        "userName": "CodeTiger"
+        "name": "file"
     },
     "description": "The API for add image",
     "type": "Post",
@@ -12,5 +12,8 @@
             "imageId": 1,
             "imageUrl": "https://codetiger.oss-cn-shanghai.aliyuncs.com/blog/article/images/1576390067380.png"
         }
+    },
+    "comment": {
+        "name": "这个name是指input框的name属性值"
     }
 }

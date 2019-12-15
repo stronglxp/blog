@@ -1,7 +1,6 @@
 {
     "url": "/back/article/update",
     "param": {
-        "userName": "CodeTiger",
         "articleName": "我的祖国",
         "articleBody": "......",
         "articleStatus": 0
