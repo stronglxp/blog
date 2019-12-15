@@ -6,4 +6,10 @@
         insert into images(image_url) values (#{imageUrl});
     </insert>
 
+    <delete id="deleteImage" parameterType="Integer">
+        delete from images
+        <where>
+            image_id = #{imageId}
+        </where>
+    </delete>
 </mapper>

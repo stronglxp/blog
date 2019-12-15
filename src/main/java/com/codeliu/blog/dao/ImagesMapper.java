@@ -15,4 +15,6 @@ public interface ImagesMapper {
      * @return
      */
     Integer addImage(Images images);
+
+    Integer deleteImage(Integer imageId);
 }
