@@ -1,0 +1,16 @@
+{
+    "url": "/back/image/upload",
+    "param": {
+        "userName": "CodeTiger"
+    },
+    "description": "The API for add image",
+    "type": "Post",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": {
+            "imageId": 1,
+            "imageUrl": "https://codetiger.oss-cn-shanghai.aliyuncs.com/blog/article/images/1576390067380.png"
+        }
+    }
+}

@@ -1,5 +1,6 @@
 package com.codeliu.blog.dao;
 
+import com.codeliu.blog.entity.Images;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -7,4 +8,11 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ImagesMapper {
+
+    /**
+     * insert a image to db
+     * @param images
+     * @return
+     */
+    Integer addImage(Images images);
 }

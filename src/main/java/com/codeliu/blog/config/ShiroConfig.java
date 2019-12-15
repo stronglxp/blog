@@ -108,6 +108,7 @@ public class ShiroConfig {
         // The front url not
         filterChainDefinitionMap.put("/back/**", "authc,roles[admin]");
         filterChainDefinitionMap.put("/front/**", "anon");
+        //filterChainDefinitionMap.put("/back/**", "anon");
         // Login without authentication
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/", "anon");
