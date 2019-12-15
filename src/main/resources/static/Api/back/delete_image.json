@@ -1,0 +1,15 @@
+{
+    "url": "/back/image/delete",
+    "param": {
+        "imageId": 1
+    },
+    "description": "The API for delete image",
+    "type": "Post",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": {
+
+        }
+    }
+}

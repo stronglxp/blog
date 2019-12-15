@@ -3,6 +3,7 @@ package com.codeliu.blog.service.impl;
 import com.codeliu.blog.dao.ImagesMapper;
 import com.codeliu.blog.entity.Images;
 import com.codeliu.blog.service.ImagesService;
+import com.codeliu.blog.util.MsgEnum;
 import com.codeliu.blog.util.OSSUtils;
 import com.codeliu.blog.util.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,26 @@ public class ImagesServiceImpl implements ImagesService {
         } finally {
             ossUtils.destroy();
         }
+        return res;
+    }
+
+    @Override
+    public ResultUtils<Map<String, Object>> deleteImage(Integer imageId) {
+        ResultUtils<Map<String, Object>> res = new ResultUtils<>();
+        if (imageId == null) {
+            res.setCode(MsgEnum.PARAM_ERROR.getCode());
+            res.setMsg(MsgEnum.PARAM_ERROR.getMsg());
+            res.setData(null);
+            return res;
+        }
+
+        Integer num = imagesMapper.deleteImage(imageId);
+        if (num == 1) {
+            res = res.isOk(null);
+        } else {
+            res = res.isFaild();
+        }
+
         return res;
     }
 }

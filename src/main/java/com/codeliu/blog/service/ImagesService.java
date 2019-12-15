@@ -8,4 +8,6 @@ import java.util.Map;
 public interface ImagesService {
 
     ResultUtils<Map<String, Object>> addImage(MultipartFile file);
+
+    ResultUtils<Map<String, Object>> deleteImage(Integer imageId);
 }

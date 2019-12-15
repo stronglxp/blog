@@ -28,4 +28,9 @@ public class BackController {
         logger.debug("res = {}", res);
         return res;
     }
+
+    @RequestMapping("/image/delete")
+    public ResultUtils<Map<String, Object>> deleteImage(Integer imageId) {
+        return imagesService.deleteImage(imageId);
+    }
 }
