@@ -1,7 +1,6 @@
 {
     "url": "/back/article/delete",
     "param": {
-        "userName": "CodeTiger",
         "articleId": 1
     },
     "description": "The API for delete article",
