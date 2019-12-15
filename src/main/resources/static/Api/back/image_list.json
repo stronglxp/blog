@@ -1,0 +1,22 @@
+{
+    "url": "/back/image/list",
+    "param": {
+
+    },
+    "description": "The API to get image ten once time",
+    "type": "Get",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": [
+            {
+                "imageId": 1,
+                "imageUrl": "///"
+            },
+            {
+                "imageId": 2,
+                "imageUrl": "///"
+            }
+        ]
+    }
+}

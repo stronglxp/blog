@@ -1,0 +1,25 @@
+{
+    "url": "/back/image/list/more",
+    "param": {
+        "maxImageId": 11
+    },
+    "description": "The API to get more image",
+    "type": "Get",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": [
+            {
+                "imageId": 11,
+                "imageUrl": "///"
+            },
+            {
+                "imageId": 12,
+                "imageUrl": "///"
+            }
+        ]
+    },
+    "comment": {
+        "maxImageId": "上次加载的最后一个图片id"
+    }
+}
