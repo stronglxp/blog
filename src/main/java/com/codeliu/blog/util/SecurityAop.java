@@ -18,7 +18,7 @@ import java.util.Map;
 public class SecurityAop {
     private Logger logger = LoggerFactory.getLogger(SecurityAop.class);
 
-    @Pointcut("execution(public * com.codeliu.blog.controller.BackController.*(..))")
+    //@Pointcut("execution(public * com.codeliu.blog.controller.BackController.*(..))")
     private void pointCut() {}
 
     /**
@@ -29,7 +29,7 @@ public class SecurityAop {
      * @param joinPoint
      * @return
      */
-    @Around("pointCut()")
+    //@Around("pointCut()")
     public Object beforeUrl(ProceedingJoinPoint joinPoint) {
         ResultUtils<Map<String, String>> res = new ResultUtils<>();
         Object[] args = joinPoint.getArgs();
