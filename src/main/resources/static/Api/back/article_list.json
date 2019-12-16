@@ -10,20 +10,20 @@
         "msg": "success",
         "data": [
             {
-                "articleId": 1,
-                "articleName": "我和我的祖国",
-                "articleTime": "2019-10-11 08:00:00",
-                "articleStatus": 1
+                "article_id": 1,
+                "article_name": "我和我的祖国",
+                "article_time": "2019-10-11 08:00:00",
+                "article_status": 1
             },
             {
-                "articleId": 2,
-                "articleName": "我和我的祖国",
-                "articleTime": "2019-10-11 08:00:00",
-                "articleStatus": 0
+                "article_id": 2,
+                "article_name": "我和我的祖国",
+                "article_time": "2019-10-11 08:00:00",
+                "article_status": 0
             }
         ]
     },
     "comment": {
-        "articleStatus": "代表文章的状态，1表示文章显示，0表示文章不显示"
+        "article_status": "代表文章的状态，1表示文章显示，0表示文章不显示"
     }
 }

@@ -12,4 +12,14 @@
             image_id = #{imageId}
         </where>
     </delete>
+
+    <select id="listImage" resultType="map">
+        select image_id, image_url from images
+        <where>
+            <if test="maxImageId != null">
+                and image_id > #{maxImageId}
+            </if>
+        </where>
+        limit 10
+    </select>
 </mapper>
