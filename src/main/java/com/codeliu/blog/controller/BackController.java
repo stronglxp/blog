@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,5 +33,10 @@ public class BackController {
     @RequestMapping("/image/delete")
     public ResultUtils<Map<String, Object>> deleteImage(Integer imageId) {
         return imagesService.deleteImage(imageId);
+    }
+
+    @RequestMapping("/image/list")
+    public ResultUtils<List<Map<String, Object>>> listImage() {
+        return imagesService.listImage();
     }
 }

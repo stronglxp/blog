@@ -10,12 +10,12 @@
         "msg": "success",
         "data": [
             {
-                "imageId": 1,
-                "imageUrl": "///"
+                "image_id": 1,
+                "image_url": "///"
             },
             {
-                "imageId": 2,
-                "imageUrl": "///"
+                "image_id": 2,
+                "image_url": "///"
             }
         ]
     }

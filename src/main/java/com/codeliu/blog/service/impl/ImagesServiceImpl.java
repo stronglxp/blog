@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -68,6 +70,21 @@ public class ImagesServiceImpl implements ImagesService {
         } else {
             res = res.isFaild();
         }
+
+        return res;
+    }
+
+    @Override
+    public ResultUtils<List<Map<String, Object>>> listImage() {
+        ResultUtils<List<Map<String, Object>>> res = new ResultUtils<>();
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        list = imagesMapper.listImage();
+        if (list.size() < 0) {
+            return res.isFaild();
+        }
+
+        res = res.isOk(list);
 
         return res;
     }
