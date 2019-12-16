@@ -16,8 +16,8 @@
     <select id="listImage" resultType="map">
         select image_id, image_url from images
         <where>
-            <if test="maxImageId != null">
-                and image_id > #{maxImageId}
+            <if test="_parameter != null">
+                and image_id > #{_parameter}
             </if>
         </where>
         limit 10

@@ -12,5 +12,5 @@ public interface ImagesService {
 
     ResultUtils<Map<String, Object>> deleteImage(Integer imageId);
 
-    ResultUtils<List<Map<String, Object>>> listImage();
+    ResultUtils<List<Map<String, Object>>> listImage(Integer maxImageId);
 }

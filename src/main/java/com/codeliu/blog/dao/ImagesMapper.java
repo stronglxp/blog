@@ -23,7 +23,8 @@ public interface ImagesMapper {
 
     /**
      * Take ten pictures at a time. The field name is key and the field value is value
+     * @param maxImageId
      * @return
      */
-    List<Map<String, Object>> listImage();
+    List<Map<String, Object>> listImage(Integer maxImageId);
 }
