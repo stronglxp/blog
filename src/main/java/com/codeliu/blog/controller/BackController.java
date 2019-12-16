@@ -37,6 +37,11 @@ public class BackController {
 
     @RequestMapping("/image/list")
     public ResultUtils<List<Map<String, Object>>> listImage() {
-        return imagesService.listImage();
+        return imagesService.listImage(null);
+    }
+
+    @RequestMapping("/image/list/more")
+    public ResultUtils<List<Map<String, Object>>> listImageMore(Integer maxImageId) {
+        return imagesService.listImage(maxImageId);
     }
 }

@@ -75,11 +75,11 @@ public class ImagesServiceImpl implements ImagesService {
     }
 
     @Override
-    public ResultUtils<List<Map<String, Object>>> listImage() {
+    public ResultUtils<List<Map<String, Object>>> listImage(Integer maxImageId) {
         ResultUtils<List<Map<String, Object>>> res = new ResultUtils<>();
         List<Map<String, Object>> list = new ArrayList<>();
 
-        list = imagesMapper.listImage();
+        list = imagesMapper.listImage(maxImageId);
         if (list.size() < 0) {
             return res.isFaild();
         }
