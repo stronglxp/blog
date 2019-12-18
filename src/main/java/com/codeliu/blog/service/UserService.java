@@ -1,6 +1,9 @@
 package com.codeliu.blog.service;
 
 import com.codeliu.blog.entity.User;
+import com.codeliu.blog.util.ResultUtils;
+
+import java.util.Map;
 
 public interface UserService {
 
@@ -10,5 +13,5 @@ public interface UserService {
 
     int delUser(String userName);
 
-    Integer updateUser(User user);
+    ResultUtils<Map<String, Object>> updateUser(User user);
 }

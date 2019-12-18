@@ -3,8 +3,12 @@ package com.codeliu.blog.service.impl;
 import com.codeliu.blog.dao.UserMapper;
 import com.codeliu.blog.entity.User;
 import com.codeliu.blog.service.UserService;
+import com.codeliu.blog.util.DataUtils;
+import com.codeliu.blog.util.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,10 +40,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer updateUser(User user) {
+    public ResultUtils<Map<String, Object>> updateUser(User user) {
+        ResultUtils<Map<String, Object>> res = new ResultUtils<>();
+        if (user == null) {
+            return res.isFaild();
+        }
 
-        Integer result = null;
-        result = userMapper.updateUser(user);
-        return result;
+        String password = user.getUserPassword();
+        String salt = DataUtils.getSalt();
+        user.setUserPassword(DataUtils.getMD5Str(password, salt));
+        user.setUserSalt(salt);
+
+        Integer num = userMapper.updateUser(user);
+        if (num == 1) {
+            res = res.isOk(null);
+        } else {
+            res = res.isFaild();
+        }
+
+        return res;
     }
 }
