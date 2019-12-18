@@ -1,0 +1,17 @@
+{
+    "url": "/back/userinfo/update",
+    "param": {
+        "userId": 1,
+        "userPassword": "123456789"
+    },
+    "description": "The API for update user info",
+    "type": "Post",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": ""
+    },
+    "comment": {
+        "description": "修改用户密码"
+    }
+}

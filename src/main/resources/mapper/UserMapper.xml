@@ -30,7 +30,7 @@
     <update id="updateUser" parameterType="user">
         update user set user_salt = #{userSalt}, user_password = #{userPassword}
         <where>
-            user_name = #{userName}
+            user_id = #{userId}
         </where>
     </update>
 
