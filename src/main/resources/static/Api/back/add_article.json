@@ -10,7 +10,9 @@
     "return": {
         "code": 200,
         "msg": "success",
-        "data": ""
+        "data": {
+            "articleId": 1
+        }
     },
     "comment": {
 
