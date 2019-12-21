@@ -64,4 +64,9 @@ public class BackController {
     public ResultUtils<Map<String, Object>> addArticle(Article article) {
         return articleService.addArticle(article);
     }
+
+    @GetMapping("/article/list")
+    public ResultUtils<List<Map<String, Object>>> listArticle(Integer maxArticleId) {
+        return articleService.listArticle(maxArticleId);
+    }
 }
