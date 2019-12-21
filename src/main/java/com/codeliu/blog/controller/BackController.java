@@ -66,7 +66,12 @@ public class BackController {
     }
 
     @GetMapping("/article/list")
-    public ResultUtils<List<Map<String, Object>>> listArticle(Integer maxArticleId) {
+    public ResultUtils<List<Map<String, Object>>> listArticle() {
+        return articleService.listArticle(null);
+    }
+
+    @GetMapping("/article/list/more")
+    public ResultUtils<List<Map<String, Object>>> listArticleMore(Integer maxArticleId) {
         return articleService.listArticle(maxArticleId);
     }
 }
