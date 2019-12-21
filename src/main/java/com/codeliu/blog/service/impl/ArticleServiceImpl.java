@@ -7,7 +7,9 @@ import com.codeliu.blog.util.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -30,6 +32,21 @@ public class ArticleServiceImpl implements ArticleService {
         } else {
             res = res.isFaild();
         }
+
+        return res;
+    }
+
+    @Override
+    public ResultUtils<List<Map<String, Object>>> listArticle(Integer maxArticleId) {
+        ResultUtils<List<Map<String, Object>>> res = new ResultUtils<>();
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        list = articleMapper.listArticle(maxArticleId);
+        if (list.size() < 0) {
+            return res.isFaild();
+        }
+
+        res = res.isOk(list);
 
         return res;
     }

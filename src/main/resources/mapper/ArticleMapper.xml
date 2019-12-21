@@ -6,4 +6,14 @@
         insert into article(article_name, article_body)
         value(#{articleName}, #{articleBody})
     </insert>
+
+    <select id="listArticle" resultType="map">
+        select article_id, article_name, article_time, article_status from article
+        <where>
+            <if test="_parameter != null">
+                and article_id > #{_parameter}
+            </if>
+        </where>
+        limit 10
+    </select>
 </mapper>
