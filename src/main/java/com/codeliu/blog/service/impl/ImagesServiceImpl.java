@@ -8,6 +8,7 @@ import com.codeliu.blog.util.OSSUtils;
 import com.codeliu.blog.util.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class ImagesServiceImpl implements ImagesService {
     private ImagesMapper imagesMapper;
 
     @Override
+    @Transactional
     public ResultUtils<Map<String, Object>> addImage(MultipartFile file) {
         ResultUtils<Map<String, Object>> res = new ResultUtils<>();
         Images images = new Images();
@@ -55,6 +57,7 @@ public class ImagesServiceImpl implements ImagesService {
     }
 
     @Override
+    @Transactional
     public ResultUtils<Map<String, Object>> deleteImage(Integer imageId) {
         ResultUtils<Map<String, Object>> res = new ResultUtils<>();
         if (imageId == null) {

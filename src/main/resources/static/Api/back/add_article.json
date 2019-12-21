@@ -2,7 +2,6 @@
     "url": "/back/article/add",
     "param": {
         "articleName": "我的祖国",
-        "articleTime": "2019-12-13 22:59:59",
         "articleBody": "......"
     },
     "description": "The API for add article",

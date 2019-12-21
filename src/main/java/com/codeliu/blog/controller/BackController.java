@@ -1,6 +1,8 @@
 package com.codeliu.blog.controller;
 
+import com.codeliu.blog.entity.Article;
 import com.codeliu.blog.entity.User;
+import com.codeliu.blog.service.ArticleService;
 import com.codeliu.blog.service.ImagesService;
 import com.codeliu.blog.service.UserService;
 import com.codeliu.blog.util.ResultUtils;
@@ -27,6 +29,8 @@ public class BackController {
     private ImagesService imagesService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private ArticleService articleService;
 
     @PostMapping("/image/upload")
     public ResultUtils<Map<String, Object>> uploadImage(MultipartFile file) {
@@ -54,5 +58,10 @@ public class BackController {
     @PostMapping("/userinfo/update")
     public ResultUtils<Map<String, Object>> updateUser(User user) {
         return userService.updateUser(user);
+    }
+
+    @PostMapping("/article/add")
+    public ResultUtils<Map<String, Object>> addArticle(Article article) {
+        return articleService.addArticle(article);
     }
 }
