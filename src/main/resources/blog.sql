@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 101.132.145.185
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50728
- Source Host           : 101.132.145.185:3306
+ Source Server Version : 50725
+ Source Host           : localhost:3306
  Source Schema         : blog
 
  Target Server Type    : MySQL
- Target Server Version : 50728
+ Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 15/12/2019 13:46:55
+ Date: 21/12/2019 13:21:06
 */
 
 SET NAMES utf8mb4;
@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `article`;
 CREATE TABLE `article`  (
   `article_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `article_name` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `article_time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0),
+  `article_time` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0),
   `article_body` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `article_status` int(2) UNSIGNED NOT NULL DEFAULT 1 COMMENT '0 is hide, 1 is show',
   PRIMARY KEY (`article_id`) USING BTREE
@@ -50,7 +50,12 @@ CREATE TABLE `images`  (
   `image_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `image_url` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`image_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of images
+-- ----------------------------
+INSERT INTO `images` VALUES (2, 'http://codetiger.oss-cn-shanghai.aliyuncs.com/blog/article/images/1576390067380.png');
 
 -- ----------------------------
 -- Table structure for role
@@ -85,6 +90,6 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '1459972321800f81c736625a639c03fa785bb294', '7b70c59f70867fab7918263892be62e6', 1);
+INSERT INTO `user` VALUES (1, 'admin', '146f0e52836300def9ce50351bf41446cdd4bc10', 'ee67ed874152c7b9121ba4edbf36b33e', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -1,5 +1,7 @@
 package com.codeliu.blog.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
 public class Article {
     private Integer articleId;
     private String articleName;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date articleTime;
     private String articleBody;
     private Integer articleStatus;
