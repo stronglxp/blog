@@ -103,4 +103,17 @@ public class ArticleServiceImpl implements ArticleService {
 
         return res;
     }
+
+    @Override
+    public ResultUtils<Map<String, Object>> articleInfo(Integer articleId) {
+        ResultUtils<Map<String, Object>> res = new ResultUtils<>();
+        Map<String, Object> map = articleMapper.articleInfo(articleId);
+
+        if (map == null || map.size() != 1) {
+            return res.isFaild();
+        }
+
+        res = res.isOk(map);
+        return res;
+    }
 }

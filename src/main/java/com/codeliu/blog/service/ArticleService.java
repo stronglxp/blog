@@ -16,4 +16,6 @@ public interface ArticleService {
     ResultUtils<Map<String, Object>> updateArticle(Article article);
 
     ResultUtils<List<Map<String, Object>>> listAllArticle();
+
+    ResultUtils<Map<String, Object>> articleInfo(Integer articleId);
 }
