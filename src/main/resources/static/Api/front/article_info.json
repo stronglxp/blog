@@ -1,7 +1,7 @@
 {
-    "url": "/front/article/info",
+    "url": "/front/article/info/{articleId}",
     "param": {
-        "article_id": 2
+
     },
     "description": "Get details of an article",
     "type": "Get",
@@ -15,6 +15,6 @@
         }
     },
     "comment": {
-        "data": "某篇文章详情"
+        "data": "某篇文章详情，article_id直接放在url中，不需要作为参数传递"
     }
 }
