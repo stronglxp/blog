@@ -23,4 +23,20 @@
             article_id = #{articleId}
         </where>
     </delete>
+
+    <update id="updateArticle" parameterType="article">
+        update article set
+        <if test="articleName != null">
+            article_name = #{articleName},
+        </if>
+        <if test="articleBody != null">
+            article_body = #{articleBody},
+        </if>
+        <if test="articleStatus != null">
+            article_status = #{articleStatus}
+        </if>
+        <where>
+            article_id = #{articleId}
+        </where>
+    </update>
 </mapper>

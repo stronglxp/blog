@@ -16,4 +16,6 @@ public interface ArticleMapper {
     List<Map<String, Object>> listArticle(Integer maxArticleId);
 
     Integer deleteArticle(Integer articleId);
+
+    Integer updateArticle(Article article);
 }

@@ -79,4 +79,9 @@ public class BackController {
     public ResultUtils<Map<String, Object>> deleteArticle(Integer articleId) {
         return articleService.deleteArticle(articleId);
     }
+
+    @PostMapping("/article/update")
+    public ResultUtils<Map<String, Object>> updateArticle(Article article) {
+        return articleService.updateArticle(article);
+    }
 }
