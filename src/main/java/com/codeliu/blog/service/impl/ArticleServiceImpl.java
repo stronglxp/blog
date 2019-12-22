@@ -4,6 +4,8 @@ import com.codeliu.blog.dao.ArticleMapper;
 import com.codeliu.blog.entity.Article;
 import com.codeliu.blog.service.ArticleService;
 import com.codeliu.blog.util.ResultUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,7 @@ import java.util.Map;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
+    private Logger logger = LoggerFactory.getLogger(ArticleServiceImpl.class);
     @Autowired
     private ArticleMapper articleMapper;
 
@@ -108,8 +111,7 @@ public class ArticleServiceImpl implements ArticleService {
     public ResultUtils<Map<String, Object>> articleInfo(Integer articleId) {
         ResultUtils<Map<String, Object>> res = new ResultUtils<>();
         Map<String, Object> map = articleMapper.articleInfo(articleId);
-
-        if (map == null || map.size() != 1) {
+        if (map == null || map.size() != 3) {
             return res.isFaild();
         }
 

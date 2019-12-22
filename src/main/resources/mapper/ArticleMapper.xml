@@ -50,10 +50,10 @@
         order by article_time desc
     </select>
 
-    <select id="articleInfo" resultType="map">
+    <select id="articleInfo" resultType="map" parameterType="Integer">
         select article_name, article_time, article_body from article
         <where>
-            article_id = #{articleId}
+            article_id = #{articleId} and article_status = 1
         </where>
     </select>
 </mapper>
