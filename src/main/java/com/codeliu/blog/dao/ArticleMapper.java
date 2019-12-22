@@ -20,4 +20,6 @@ public interface ArticleMapper {
     Integer updateArticle(Article article);
 
     List<Map<String, Object>> listAllArticle();
+
+    Map<String, Object> articleInfo(Integer articleId);
 }

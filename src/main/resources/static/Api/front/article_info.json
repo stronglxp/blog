@@ -1,0 +1,20 @@
+{
+    "url": "/front/article/info",
+    "param": {
+        "article_id": 2
+    },
+    "description": "Get details of an article",
+    "type": "Get",
+    "return": {
+        "code": 200,
+        "msg": "success",
+        "data": {
+            "article_name": "我的祖国",
+            "article_time": "2019-12-22 15:23:23",
+            "article_body": "xxxxxxxx"
+        }
+    },
+    "comment": {
+        "data": "某篇文章详情"
+    }
+}

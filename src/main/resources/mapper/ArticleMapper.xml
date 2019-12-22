@@ -49,4 +49,11 @@
         </where>
         order by article_time desc
     </select>
+
+    <select id="articleInfo" resultType="map">
+        select article_name, article_time, article_body from article
+        <where>
+            article_id = #{articleId}
+        </where>
+    </select>
 </mapper>
