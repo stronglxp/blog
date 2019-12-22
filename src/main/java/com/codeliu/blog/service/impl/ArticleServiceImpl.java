@@ -87,4 +87,20 @@ public class ArticleServiceImpl implements ArticleService {
 
         return res;
     }
+
+    @Override
+    public ResultUtils<List<Map<String, Object>>> listAllArticle() {
+        ResultUtils<List<Map<String, Object>>> res = new ResultUtils<>();
+
+        List<Map<String, Object>> list = new ArrayList<>();
+        list = articleMapper.listAllArticle();
+
+        if (list.size() < 0) {
+            return res.isFaild();
+        }
+
+        res = res.isOk(list);
+
+        return res;
+    }
 }

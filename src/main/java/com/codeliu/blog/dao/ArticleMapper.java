@@ -18,4 +18,6 @@ public interface ArticleMapper {
     Integer deleteArticle(Integer articleId);
 
     Integer updateArticle(Article article);
+
+    List<Map<String, Object>> listAllArticle();
 }
