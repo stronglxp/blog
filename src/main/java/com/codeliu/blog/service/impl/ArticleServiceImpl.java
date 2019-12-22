@@ -70,4 +70,21 @@ public class ArticleServiceImpl implements ArticleService {
 
         return res;
     }
+
+    @Override
+    public ResultUtils<Map<String, Object>> updateArticle(Article article) {
+        ResultUtils<Map<String, Object>> res = new ResultUtils<>();
+        if (res == null) {
+            return res.isFaild();
+        }
+
+        Integer num = articleMapper.updateArticle(article);
+        if (num == 1) {
+            res = res.isOk(null);
+        } else {
+            res = res.isFaild();
+        }
+
+        return res;
+    }
 }

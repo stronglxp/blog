@@ -1,6 +1,7 @@
 {
     "url": "/back/article/update",
     "param": {
+        "articleId": 1,
         "articleName": "我的祖国",
         "articleBody": "......",
         "articleStatus": 0
@@ -13,6 +14,6 @@
         "data": ""
     },
     "comment": {
-        "description": "可以更新articleName、articleBody、articleStatus任意组合"
+        "description": "可以更新articleName、articleBody、articleStatus任意组合，不需要修改的字段就不传"
     }
 }

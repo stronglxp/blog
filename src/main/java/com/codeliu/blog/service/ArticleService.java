@@ -12,4 +12,6 @@ public interface ArticleService {
     ResultUtils<List<Map<String, Object>>> listArticle(Integer maxArticleId);
 
     ResultUtils<Map<String, Object>> deleteArticle(Integer articleId);
+
+    ResultUtils<Map<String, Object>> updateArticle(Article article);
 }
