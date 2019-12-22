@@ -7,6 +7,7 @@
         value(#{articleName}, #{articleBody})
     </insert>
 
+    <!--back-->
     <select id="listArticle" resultType="map">
         select article_id, article_name, article_time, article_status from article
         <where>
@@ -39,4 +40,13 @@
             article_id = #{articleId}
         </where>
     </update>
+
+    <!--front-->
+    <select id="listAllArticle" resultType="map">
+        select article_id, article_name, article_time from article
+        <where>
+            article_status = 1
+        </where>
+        order by article_time desc
+    </select>
 </mapper>

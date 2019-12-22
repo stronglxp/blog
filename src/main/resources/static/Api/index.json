@@ -6,6 +6,20 @@
     "return": {
         "code": 200,
         "msg": "success",
-        "data": ""
+        "data": [
+            {
+                "article_id": 2,
+                "article_name": "我的祖国",
+                "article_time": "2019-12-22 15:23:23"
+            },
+            {
+                "article_id": 1,
+                "article_name": "我为祖国献石油",
+                "article_time": "2019-12-23 15:23:23"
+            }
+        ]
+    },
+    "comment": {
+        "data": "一次把所有的文章信息返回，后面再考虑分页吧:)，按时间降序"
     }
 }
