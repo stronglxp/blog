@@ -16,4 +16,11 @@
         </where>
         limit 10
     </select>
+
+    <delete id="deleteArticle" parameterType="Integer">
+        delete from article
+        <where>
+            article_id = #{articleId}
+        </where>
+    </delete>
 </mapper>
