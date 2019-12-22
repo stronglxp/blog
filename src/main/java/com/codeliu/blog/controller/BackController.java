@@ -74,4 +74,9 @@ public class BackController {
     public ResultUtils<List<Map<String, Object>>> listArticleMore(Integer maxArticleId) {
         return articleService.listArticle(maxArticleId);
     }
+
+    @PostMapping("/article/delete")
+    public ResultUtils<Map<String, Object>> deleteArticle(Integer articleId) {
+        return articleService.deleteArticle(articleId);
+    }
 }

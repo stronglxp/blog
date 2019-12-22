@@ -6,6 +6,7 @@ import com.codeliu.blog.service.ArticleService;
 import com.codeliu.blog.util.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleMapper articleMapper;
 
     @Override
+    @Transactional
     public ResultUtils<Map<String, Object>> addArticle(Article article) {
         ResultUtils<Map<String, Object>> res = new ResultUtils<>();
         if (article == null) {
@@ -47,6 +49,24 @@ public class ArticleServiceImpl implements ArticleService {
         }
 
         res = res.isOk(list);
+
+        return res;
+    }
+
+    @Override
+    @Transactional
+    public ResultUtils<Map<String, Object>> deleteArticle(Integer articleId) {
+        ResultUtils<Map<String, Object>> res = new ResultUtils<>();
+        if (articleId == null) {
+            return res.isFaild();
+        }
+
+        Integer num = articleMapper.deleteArticle(articleId);
+        if (num == 1) {
+            res = res.isOk(null);
+        } else {
+            res = res.isFaild();
+        }
 
         return res;
     }
